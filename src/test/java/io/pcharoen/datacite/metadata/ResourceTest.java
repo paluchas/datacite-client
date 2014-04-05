@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ca.ualberalib.datacite.metadata;
+package io.pcharoen.datacite.metadata;
 
 import io.pcharoen.datacite.metadata.ObjectFactory;
 import io.pcharoen.datacite.metadata.Resource;
