@@ -3,16 +3,19 @@
  */
 package ca.ualberalib.datacite.metadata;
 
+import io.pcharoen.datacite.metadata.ObjectFactory;
+import io.pcharoen.datacite.metadata.Resource;
+import io.pcharoen.datacite.metadata.Resource.Creators;
+import io.pcharoen.datacite.metadata.Resource.Identifier;
+import io.pcharoen.datacite.metadata.Resource.Titles;
+import io.pcharoen.datacite.metadata.Resource.Creators.Creator;
+import io.pcharoen.datacite.metadata.Resource.Creators.Creator.NameIdentifier;
+import io.pcharoen.datacite.metadata.Resource.Titles.Title;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
 import junit.framework.TestCase;
-import ca.ualberalib.datacite.metadata.Resource.Creators;
-import ca.ualberalib.datacite.metadata.Resource.Creators.Creator;
-import ca.ualberalib.datacite.metadata.Resource.Creators.Creator.NameIdentifier;
-import ca.ualberalib.datacite.metadata.Resource.Identifier;
-import ca.ualberalib.datacite.metadata.Resource.Titles;
-import ca.ualberalib.datacite.metadata.Resource.Titles.Title;
 
 /**
  * @author Piyapong
@@ -40,7 +43,7 @@ public class ResourceTest extends TestCase {
 
 	/**
 	 * Test method for
-	 * {@link ca.ualberalib.datacite.metadata.Resource#setIdentifier(ca.ualberalib.datacite.metadata.Resource.Identifier)}
+	 * {@link io.pcharoen.datacite.metadata.Resource#setIdentifier(io.pcharoen.datacite.metadata.Resource.Identifier)}
 	 * .
 	 */
 	public void testMarshaller() {
