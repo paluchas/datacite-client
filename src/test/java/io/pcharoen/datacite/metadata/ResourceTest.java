@@ -3,6 +3,8 @@
  */
 package io.pcharoen.datacite.metadata;
 
+import java.io.InputStream;
+
 import io.pcharoen.datacite.metadata.ObjectFactory;
 import io.pcharoen.datacite.metadata.Resource;
 import io.pcharoen.datacite.metadata.Resource.Creators;
@@ -14,6 +16,7 @@ import io.pcharoen.datacite.metadata.Resource.Titles.Title;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
 import junit.framework.TestCase;
 
@@ -74,14 +77,25 @@ public class ResourceTest extends TestCase {
 			res.setPublicationYear("2014");
 			res.setPublisher("Piyapong");
 			
-			
 			JAXBContext jaxbContext = JAXBContext.newInstance(Resource.class);
 			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			jaxbMarshaller.marshal(res, System.out);
-		
+			assertTrue("test success", true);
 		} catch (Exception e) {
-			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	public void testUnmarshaller(){
+		try {
+			InputStream metadata = ResourceTest.class.getResourceAsStream("/metadata.xml");
+			JAXBContext jaxbContext = JAXBContext.newInstance(Resource.class);
+			Unmarshaller unmarshaller =jaxbContext.createUnmarshaller();
+			Resource res = (Resource) unmarshaller.unmarshal(metadata);
+			assertNotNull("test success",res);;
+		} catch (Exception e) {
+			fail(e.getMessage());
 		}
 	}
 }

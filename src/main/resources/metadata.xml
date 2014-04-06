@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-3"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd">
+   <identifier identifierType="DOI">10.5072/testing.doi.post.1</identifier>
+   <creators>
+      <creator>
+         <creatorName>Smith, J.</creatorName>
+         <nameIdentifier nameIdentifierScheme="TEST_ID">12345</nameIdentifier>
+      </creator>
+   </creators>
+   <titles>
+      <title>DataCite MDS application programming interface demos</title>
+      <title titleType="AlternativeTitle">Demo metadata</title>
+   </titles>
+   <publisher>Publishing Organization</publisher>
+   <publicationYear>2013</publicationYear>
+   <subjects>
+      <subject>Demo</subject>
+      <subject>Test</subject>
+   </subjects>
+   <contributors>
+      <contributor contributorType="Producer">
+         <contributorName>Organization Name</contributorName>
+      </contributor>
+   </contributors>
+   <language>en</language>
+   <resourceType resourceTypeGeneral="Text">report</resourceType>
+   <alternateIdentifiers>
+      <alternateIdentifier alternateIdentifierType="test_id">1234567</alternateIdentifier>
+   </alternateIdentifiers>
+   <sizes>
+      <size>40 p.</size>
+   </sizes>
+</resource>
