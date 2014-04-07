@@ -10,4 +10,4 @@
  * @author <a href="mailto:piyapong.charoenwattana@gmail.com">Piyapong Charoenwattana</a>
  * @version $Revision$ $Date$
  */
-package io.pcharoen.datacite.client;
+package com.github.pcharoen.datacite.client;

@@ -1,14 +1,7 @@
 /**
  * 
  */
-package io.pcharoen.datacite.metadata;
-
-import io.pcharoen.datacite.metadata.Resource.Creators;
-import io.pcharoen.datacite.metadata.Resource.Creators.Creator;
-import io.pcharoen.datacite.metadata.Resource.Creators.Creator.NameIdentifier;
-import io.pcharoen.datacite.metadata.Resource.Identifier;
-import io.pcharoen.datacite.metadata.Resource.Titles;
-import io.pcharoen.datacite.metadata.Resource.Titles.Title;
+package com.github.pcharoen.datacite.metadata;
 
 import java.io.InputStream;
 
@@ -17,6 +10,13 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import junit.framework.TestCase;
+
+import com.github.pcharoen.datacite.metadata.Resource.Creators;
+import com.github.pcharoen.datacite.metadata.Resource.Creators.Creator;
+import com.github.pcharoen.datacite.metadata.Resource.Creators.Creator.NameIdentifier;
+import com.github.pcharoen.datacite.metadata.Resource.Identifier;
+import com.github.pcharoen.datacite.metadata.Resource.Titles;
+import com.github.pcharoen.datacite.metadata.Resource.Titles.Title;
 
 /**
  * @author Piyapong
@@ -46,7 +46,8 @@ public class ResourceTest extends TestCase {
 
 	/**
 	 * Test method for
-	 * {@link io.pcharoen.datacite.metadata.Resource#setIdentifier(io.pcharoen.datacite.metadata.Resource.Identifier)} .
+	 * {@link com.github.pcharoen.datacite.metadata.Resource#setIdentifier(com.github.pcharoen.datacite.metadata.Resource.Identifier)}
+	 * .
 	 */
 	public void testMarshaller() {
 		try {
