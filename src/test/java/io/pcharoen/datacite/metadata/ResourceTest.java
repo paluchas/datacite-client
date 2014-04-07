@@ -3,16 +3,14 @@
  */
 package io.pcharoen.datacite.metadata;
 
-import java.io.InputStream;
-
-import io.pcharoen.datacite.metadata.ObjectFactory;
-import io.pcharoen.datacite.metadata.Resource;
 import io.pcharoen.datacite.metadata.Resource.Creators;
-import io.pcharoen.datacite.metadata.Resource.Identifier;
-import io.pcharoen.datacite.metadata.Resource.Titles;
 import io.pcharoen.datacite.metadata.Resource.Creators.Creator;
 import io.pcharoen.datacite.metadata.Resource.Creators.Creator.NameIdentifier;
+import io.pcharoen.datacite.metadata.Resource.Identifier;
+import io.pcharoen.datacite.metadata.Resource.Titles;
 import io.pcharoen.datacite.metadata.Resource.Titles.Title;
+
+import java.io.InputStream;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -31,6 +29,7 @@ public class ResourceTest extends TestCase {
 	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 */
+	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 	}
@@ -40,14 +39,14 @@ public class ResourceTest extends TestCase {
 	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 */
+	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}
 
 	/**
 	 * Test method for
-	 * {@link io.pcharoen.datacite.metadata.Resource#setIdentifier(io.pcharoen.datacite.metadata.Resource.Identifier)}
-	 * .
+	 * {@link io.pcharoen.datacite.metadata.Resource#setIdentifier(io.pcharoen.datacite.metadata.Resource.Identifier)} .
 	 */
 	public void testMarshaller() {
 		try {
@@ -62,12 +61,12 @@ public class ResourceTest extends TestCase {
 			creator.setNameIdentifier(nid);
 			creators.getCreator().add(creator);
 			res.setCreators(creators);
-			
+
 			Identifier id = of.createResourceIdentifier();
 			id.setIdentifierType("DOI");
 			id.setValue("10.5072/WDCC/CCSRNIES_SRES_B2");
 			res.setIdentifier(id);
-			
+
 			Titles titles = of.createResourceTitles();
 			Title title = of.createResourceTitlesTitle();
 			title.setValue("National Institute for Environmental Studies and Center for Climate System Research Japan");
@@ -76,7 +75,7 @@ public class ResourceTest extends TestCase {
 
 			res.setPublicationYear("2014");
 			res.setPublisher("Piyapong");
-			
+
 			JAXBContext jaxbContext = JAXBContext.newInstance(Resource.class);
 			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -86,14 +85,14 @@ public class ResourceTest extends TestCase {
 			fail(e.getMessage());
 		}
 	}
-	
-	public void testUnmarshaller(){
+
+	public void testUnmarshaller() {
 		try {
 			InputStream metadata = ResourceTest.class.getResourceAsStream("/metadata.xml");
 			JAXBContext jaxbContext = JAXBContext.newInstance(Resource.class);
-			Unmarshaller unmarshaller =jaxbContext.createUnmarshaller();
+			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 			Resource res = (Resource) unmarshaller.unmarshal(metadata);
-			assertNotNull("test success",res);;
+			assertNotNull("test success", res);
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
